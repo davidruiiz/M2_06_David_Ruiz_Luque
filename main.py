@@ -36,20 +36,22 @@ print(mayor(num1,num2,num3))
 #  Esto es; la clasificación de su índice de masa corporal (IMC), según la tabla proporcionada.
 #  La función recibirá el peso (en kilos) y la talla de una persona (en metros con dos decimales), datos a partir de los cuales se puede calcular el IMC cómo:
 
-def imc():
-    alura=float(input('{:05.2f}Introduce la altura en metros con dos decimales:\n'))
-    peso=float(input('Introduce el peso en Kg:\n'))
-    IMC=peso/altura**2
-    if IMC < 18.5:
-        return 'Bajo peso'
-    elif IMC < 25:
-        return 'Normal'
-    elif IMC < 30:
-        return 'Sobrepeso'
+def imc(altura,peso):
+    IMC=peso/(altura**2)
+    if IMC < 18.50:
+        cadena='Bajo peso'
+    elif IMC < 25.00:
+        cadena='Normal'
+    elif IMC < 30.00:
+        cadena='Sobrepeso'
     else:
-        return 'Obeso'
-    
-print(imc())
+        cadena='Obeso'
+    return cadena
+
+altura=float(input('Introduce la altura en metros con dos decimales:\n'))
+peso=float(input('Introduce el peso en Kg con dos decimales:\n'))
+
+print(imc(altura,peso))
 
     
 
