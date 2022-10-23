@@ -17,17 +17,18 @@ def lee_numero():
     numero=float(input("Introduce un número cualquiera:\n "))
     return numero
 
+def mayor(a,b,c):
+    if a<b<c:
+        mayor_numero=c
+    elif a>b>c:
+        mayor_numero=a
+    else:
+        mayor_numero=b
+    return '{} es el mayor de los tres números introducidos.'.format(mayor_numero)
+        
 num1=lee_numero()
 num2=lee_numero()
 num3=lee_numero()
-
-def mayor(a,b,c):
-    if a<b<c:
-        return '{} es el mayor de los tres números introducidos.'.format(c)
-    elif a>b>c:
-        return '{} es el mayor de los tres números introducidos.'.format(a)
-    else:
-        return '{} es el mayor de los tres números introducidos.'.format(b)
 
 print(mayor(num1,num2,num3))
 
@@ -36,9 +37,20 @@ print(mayor(num1,num2,num3))
 #  La función recibirá el peso (en kilos) y la talla de una persona (en metros con dos decimales), datos a partir de los cuales se puede calcular el IMC cómo:
 
 def imc():
-    alura=float(input('Introduce la altura en metros:\n'))
+    alura=float(input('{:05.2f}Introduce la altura en metros con dos decimales:\n'))
     peso=float(input('Introduce el peso en Kg:\n'))
+    IMC=peso/altura**2
+    if IMC < 18.5:
+        return 'Bajo peso'
+    elif IMC < 25:
+        return 'Normal'
+    elif IMC < 30:
+        return 'Sobrepeso'
+    else:
+        return 'Obeso'
     
+print(imc())
+
     
 
 
